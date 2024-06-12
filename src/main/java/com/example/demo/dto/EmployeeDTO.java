@@ -5,8 +5,15 @@ public class EmployeeDTO {
 	public String firstName;
 	public String lastName;
 	public String emailId;
+	public String phone;
 	
 	
+	public String getPhone() {
+		return phone;
+	}
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
 	public String getFirstName() {
 		return firstName;
 	}

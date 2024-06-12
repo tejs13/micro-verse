@@ -22,8 +22,21 @@ public class Employee {
 	@Column(name = "email_address")
 	private String emailId;
 	
+	@Column(name = "phone")
+	private String phone;
+	
 
 
+
+
+	public String getPhone() {
+		return phone;
+	}
+
+
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
 
 
 	public long getId() {
@@ -70,12 +83,13 @@ public class Employee {
 		
 	}
 	
-	public Employee(long id, String firstName, String lastName, String emailId) {
+	public Employee(long id, String firstName, String lastName, String emailId, String phone) {
 		super();
 		this.id = id;
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.emailId = emailId;
+		this.phone = phone;
 	}
 	
 	

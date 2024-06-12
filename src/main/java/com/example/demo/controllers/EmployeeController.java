@@ -57,6 +57,7 @@ public class EmployeeController {
 		e.setEmailId(data.getEmailId());
 		e.setFirstName(data.getFirstName());
 		e.setLastName(data.getLastName());
+		e.setPhone(data.getPhone());
 		
 		Employee emp = employeeService.saveNewEmp(e);
 		return new ResponseEntity<Employee>(emp, HttpStatus.CREATED);
