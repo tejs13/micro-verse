@@ -1,21 +1,21 @@
 package com.example.demo.services;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.example.demo.dto.EmployeeDTO;
 import com.example.demo.models.Employee;
-import com.example.demo.repositories.EmployeeRepository;
 
 
-@Service
-public class EmployeeService {
+public interface EmployeeService {
 	
+	public Employee saveNewEmp(Employee emp);
 	
-	@Autowired
-    private EmployeeRepository employeeRepository;
-
-    public Employee saveNewEmp(Employee emp) {
-        return employeeRepository.save(emp);
-    }
+	public void deleteEmp(Long id);
+	
+	public Employee updateEmployee(Long id, EmployeeDTO empDTO);
+	
+	public Employee findEmployeeByName(String fname);
+	
+	public Employee getEmployeeById(Long id);
 
 }

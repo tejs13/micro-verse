@@ -13,3 +13,10 @@ public class ResourceNotFoundException extends RuntimeException {
 	}
 
 }
+
+
+// ExceptionHandle is the way for handling the cusomt exceptions with try catch block
+// globalized way of exception handlng in spring at Controller level
+
+
+ 

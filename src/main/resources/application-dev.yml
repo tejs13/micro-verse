@@ -1,0 +1,70 @@
+debug: false
+logging:
+    level:
+        org:
+            springframework: ERROR
+server:
+    port: 4200
+spring:
+  config:
+    activate:
+      on-profile: dev
+---
+spring:
+  config:
+    activate:
+      on-profile: dev
+  datasource:
+        driver-class-name: org.postgresql.Driver
+        password: admin
+        url: jdbc:postgresql://localhost:5432/demo
+        username: postgres
+  jpa:
+        database-platform: postgres
+        defer-datasource-initialization: true
+        generate-ddl: true
+        hibernate:
+            ddl-auto: update
+        properties:
+            hibernate:
+                dialect: org.hibernate.dialect.PostgreSQLDialect
+                format_sql: true
+        show-sql: false
+  main:
+        lazy-initialization: false
+  sql:
+        init:
+            continue-on-error: true
+            mode: always
+welcome:
+    message: 'Welcome to Micro - Verse YML '
+---
+spring:
+  config:
+    activate:
+      on-profile: dev
+  datasource:
+        driver-class-name: org.postgresql.Driver
+        password: admin
+        url: jdbc:postgresql://localhost:5432/demo
+        username: postgres
+  jpa:
+        database-platform: postgres
+        defer-datasource-initialization: true
+        generate-ddl: true
+        hibernate:
+            ddl-auto: update
+        properties:
+            hibernate:
+                dialect: org.hibernate.dialect.PostgreSQLDialect
+                format_sql: true
+        show-sql: false
+  main:
+        lazy-initialization: false
+  sql:
+        init:
+            continue-on-error: true
+            mode: always
+welcome:
+    message: 'Welcome to Micro - Verse YML PROD'
+
