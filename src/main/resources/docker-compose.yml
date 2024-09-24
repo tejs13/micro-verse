@@ -1,0 +1,23 @@
+version: '3.8'
+services:
+  postgres-container:
+    image: postgres:16.4-alpine3.20
+    environment:
+      POSTGRES_PASSWORD: admin
+      POSTGRES_USER: postgres
+      POSTGRES_DB: demo
+    volumes:
+      - "/Volumes/Drive E/docker_db_data:/var/lib/postgresql/data"
+    ports:
+      - "5433:5432"
+    
+  springboot-app:
+    image: springoot/micro-verse
+    depends_on:
+      - postgres-container
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres-container:5432/demo
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: admin
+    ports:
+      - "4200:4200"
